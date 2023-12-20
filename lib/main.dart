@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './src/views/register_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: MyHomePage(),
+      home: RegisterScreen(),
     );
   }
 }
@@ -26,7 +27,9 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Hallo"),
       ),
-      body: Text("Hallo"),
+      body: const Center(
+        child: Text("Hallo"),
+      ),
     );
   }
 }
