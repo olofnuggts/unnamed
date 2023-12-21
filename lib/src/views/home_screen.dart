@@ -1,10 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:unnamed/src/views/register_screen.dart';
 import '../views/login_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black45,
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(50.0), // here the desired height
+          child: AppBar(
+            title: Text('Welcome to Unnamed'),
+            // backgroundColor: Colors.black45,
+            elevation: 0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(
+                bottom: Radius.circular(10), // Here specify the radius
+              ),
+            ),
+          )),
       body: Stack(
         children: <Widget>[
           Container(
