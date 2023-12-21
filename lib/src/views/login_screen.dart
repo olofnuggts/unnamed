@@ -1,0 +1,67 @@
+import 'package:flutter/material.dart';
+
+class LoginScreen extends StatefulWidget {
+  @override
+  LoginScreenState createState() => LoginScreenState();
+}
+
+class LoginScreenState extends State<LoginScreen> {
+  bool isHidden = true;
+  @override
+  Widget build(BuildContext context) {
+    void toggleVisibility() {
+      setState(() {
+        isHidden = !isHidden;
+      });
+    }
+
+    return Scaffold(
+        body: Stack(children: <Widget>[
+      Container(
+        decoration: BoxDecoration(
+            // image: DecorationImage(
+            //   // image: AssetImage('assets/images/app-background.jpeg'),
+            //   fit: BoxFit.cover,
+            // ),
+            ),
+      ),
+      Center(
+        child: Container(
+            margin: EdgeInsets.symmetric(horizontal: 25),
+            child: Align(
+              alignment: Alignment.center,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: <Widget>[
+                  TextField(
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      labelText: 'Email',
+                    ),
+                  ),
+                  SizedBox(height: 10),
+                  TextField(
+                    obscureText: isHidden,
+                    decoration: InputDecoration(
+                      // fillColor: Colors.white,
+                      // filled: true,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      labelText: 'Password',
+                      suffixIcon: IconButton(
+                        icon: isHidden
+                            ? Icon(Icons.visibility)
+                            : Icon(Icons.visibility_off),
+                        onPressed: toggleVisibility,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            )),
+      )
+    ]));
+  }
+}
